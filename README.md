@@ -3,14 +3,16 @@
 This repo demonstrates a bug with mobile Chromium devices in Playwright.
 
 When the site is using a flexbox inside a grid column with a span, the flex-auto element will
-intercept click events to other links inside the flexbox.
+intercept click events to other links inside the flexbox. This prevents the mobile Chromium browser
+from being able to successfully click the link even though it is visible, enabled, and stable.
 
 This bug only occurs with mobile Chromium devices. Other mobile types and desktop Chromium work as
 expected.
 
-To reproduce, run:
+To reproduce, clone the repo then run:
 
 ```sh
+npm install
 npm test
 ```
 
